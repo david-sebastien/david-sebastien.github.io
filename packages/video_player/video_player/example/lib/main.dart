@@ -1,12 +1,3 @@
-// Copyright 2013 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-// ignore_for_file: public_member_api_docs
-
-/// An example of using the plugin, controlling lifecycle and playback of the
-/// video.
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -27,7 +18,7 @@ class _App extends StatelessWidget {
       child: Scaffold(
         key: const ValueKey<String>('home_page'),
         appBar: AppBar(
-          title: const Text('Video player example'),
+          title: const Text('Choral Ecole du Centre'),
           actions: <Widget>[
             IconButton(
               key: const ValueKey<String>('push_tab'),
@@ -247,7 +238,7 @@ class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
+      'https://media-cdn-us-west-2.gopro.com/a721892c-dee9-49c8-b1ef-32b78d3ea3a8/2168291584557188797/high_res_proxy_mp4/default/1.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3OOFXGVAJOROFQMK%2F20220711%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220711T105837Z&X-Amz-Expires=3600&X-Amz-Security-Token=FwoGZXIvYXdzEBwaDCjFE2XnfD5hVnaN5SKSBNgxNiHraxqbhGKOkOrnFzL9nBWkSjBP6JiBNPIrfysPCv38xLipUxeYZaL9D2mNcsozn%2BKt33tIw001BBKXwMIfiTGhr7WsZtKO4THUzXcvZ%2FZRDvDM0rOH4c7U%2FOyv9j8UzTb%2BIZQb5bQSGoqMYhovXeHcl2cAebu%2FNXpKXX4PxUE7c%2F0fv9yN9s%2BMI%2FkVapZALNkrkWWfwy9h6P8mwBodlmdoDMdD%2F9mZYNxIDL%2FcN6nwaxtuuwZiTKpq8yXh3slG27pl%2FrDE%2BAABC7sXKpBHE0o%2BlbBTQpxM2APgdDQW0lFVmBMwPHK5ggrRW3anhWF%2FA5yiJN8MCN01K8lHPhYoLMr97xXwsvk9NVPAQJGFRFDLSGlCAw489rP%2BCFCVNmJIIqUYvmf4HALTLL5iSReS2dHvC8tEk%2B3ayPVMhpvzAixFjAOjXoNMYgg5NhTzoH7d8%2FDiYWqXcr3cXAWVtPQzENGt5N34Tl6OI%2BwSZbngmyrt5%2BaIP7xa743jdbZ4zGKvM4nLub8HeMaTMeOXrM9Mfe3UO9YuMnTnOcactbFVU7NHp7Gowg9fjVZvIp8tD1tx3f47lWN570bd%2BTRBlASmI5VOeyXsWvN0ID0gneP%2BtTyUNTbJcFkPblQZ6wEEWXUcg7xXOLqAMLB4ZGViZbCWKmr3%2FJturno%2FgLIKs2Qz%2F9R1iUfjWQh2hmyg5QZ5wXtNKMT0r5YGMipSKQydnRd5UdEOuVOWbIp86Rm4qv16OGXFTRnw83nVYErPj1fmoN374F4%3D&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DGH010311.MP4%3B&X-Amz-Signature=004eba3f89df5b1d8c124f200d8e1c8a538fce6c240f9a6fb4fb4058482722b5',
       closedCaptionFile: _loadCaptions(),
       videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
     );
