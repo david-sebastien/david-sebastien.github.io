@@ -155,7 +155,7 @@ class _ButterFlyAssetVideoState extends State<_ButterFlyAssetVideo> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/Butterfly-209.mp4');
+    _controller = VideoPlayerController.asset('assets/Butterfly-209_crop.mp4');
 
     _controller.addListener(() {
       setState(() {});
@@ -173,6 +173,7 @@ class _ButterFlyAssetVideoState extends State<_ButterFlyAssetVideo> {
 
   @override
   Widget build(BuildContext context) {
+    const double width = 90.0;
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
@@ -180,19 +181,46 @@ class _ButterFlyAssetVideoState extends State<_ButterFlyAssetVideo> {
             padding: const EdgeInsets.only(top: 20.0),
           ),
           const Text('With assets mp4'),
-          Container(
-            padding: const EdgeInsets.all(20),
-            child: AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: <Widget>[
-                  VideoPlayer(_controller),
-                  _ControlsOverlay(controller: _controller),
-                  VideoProgressIndicator(_controller, allowScrubbing: true),
-                ],
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                color: Colors.orange,
+                padding: const EdgeInsets.all(20),
+                child: SizedBox(
+                  width: width,
+                  child: AspectRatio(
+                    aspectRatio: _controller.value.aspectRatio,
+                    child: Stack(
+                      alignment: Alignment.bottomCenter,
+                      children: <Widget>[
+                        VideoPlayer(
+                          _controller,
+                        ),
+                        _ControlsOverlay(controller: _controller),
+                        VideoProgressIndicator(_controller,
+                            allowScrubbing: true),
+                      ],
+                    ),
+                  ),
+                ),
               ),
-            ),
+              Container(
+                color: Colors.orange,
+                padding: const EdgeInsets.all(20),
+                child: SizedBox(
+                  width: width,
+                  child: AspectRatio(
+                    aspectRatio: _controller.value.aspectRatio,
+                    child: Stack(
+                      children: [
+                        Container(color: Colors.red),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
